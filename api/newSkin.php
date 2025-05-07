@@ -25,24 +25,30 @@ mkdir($dir, 0777, true);
 
 $orientation = 'portrait';
 
+$includeIpad = !empty($input['includeIpad']);
+$includeIphone = !empty($input['includeIphone']);
+$repPrimary = $input['representation'];
+$variantsMap = [ $repPrimary => $input['variant'] ];
+if($includeIpad && $repPrimary!=='ipad') $variantsMap['ipad'] = 'standard';
+if($includeIphone && $repPrimary!=='iphone') $variantsMap['iphone'] = 'standard';
+
+$repObjects=[];
+foreach($variantsMap as $rep=>$var){
+    $repObjects[$rep]=[ $var => [ $orientation => [
+        'assets'=>['resizable'=>''],
+        'items'=>[],
+        'screens'=>[],
+        'mappingSize'=>['width'=>320,'height'=>240],
+        'extendedEdges'=>['top'=>0,'bottom'=>0,'left'=>0,'right'=>0]
+    ] ] ];
+}
+
 $info = [
     'name' => $input['name'],
     'identifier' => $input['identifier'],
     'gameTypeIdentifier' => $input['gameTypeIdentifier'],
     'debug' => !empty($input['debug']),
-    'representations' => [
-        $input['representation'] => [
-            $input['variant'] => [
-                $orientation => [
-                    'assets' => [ 'resizable' => '' ],
-                    'items' => [],
-                    'screens' => [],
-                    'mappingSize' => [ 'width' => 320, 'height' => 240 ],
-                    'extendedEdges' => [ 'top'=>0,'bottom'=>0,'left'=>0,'right'=>0 ]
-                ]
-            ]
-        ]
-    ]
+    'representations' => $repObjects
 ];
 file_put_contents($dir.'/info.json', json_encode($info, JSON_PRETTY_PRINT));
 jsonResponse(['id'=>$skinId]);

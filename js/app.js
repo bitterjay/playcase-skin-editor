@@ -130,13 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
                  identifier:data.identifier||'',
                  gameTypeIdentifier:data.gameTypeIdentifier||'',
                  debug:data.debug==='1',
-                 representations:{
-                   [rep||'iphone']:{
-                     [variant||'standard']:{
-                       portrait:{}
-                     }
-                   }
-                 }
+                 representations: (()=>{
+                     const reps={};
+                     if(includeIphone.checked){ reps['iphone']={ [rep==='iphone'?variant:'standard']:{ portrait:{} } }; }
+                     if(includeIpad.checked){ reps['ipad']={ [rep==='ipad'?variant:'standard']:{ portrait:{} } }; }
+                     return reps;
+                 })()
                };
                document.getElementById('json-preview').textContent=JSON.stringify(obj,null,2);
             }
@@ -150,6 +149,8 @@ document.addEventListener('DOMContentLoaded', () => {
             data.representation = document.getElementById('rep-select').value;
             data.variant = document.getElementById('variant-select-new').value;
             data.debug = data.debug==='1';
+            data.includeIphone = includeIphone.checked;
+            data.includeIpad = includeIpad.checked;
             try{
               const res=await api('api/newSkin.php',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
               window.location.href=`edit.php?id=${res.id}`;
