@@ -1,0 +1,29 @@
+{
+    "name": "testa",
+    "identifier": "aadf",
+    "gameTypeIdentifier": "com.rileytestut.delta.game.gbc",
+    "debug": false,
+    "representations": {
+        "iphone": {
+            "edgeToEdge": {
+                "portrait": {
+                    "assets": {
+                        "resizable": ""
+                    },
+                    "items": [],
+                    "screens": [],
+                    "mappingSize": {
+                        "width": 320,
+                        "height": 240
+                    },
+                    "extendedEdges": {
+                        "top": 0,
+                        "bottom": 0,
+                        "left": 0,
+                        "right": 0
+                    }
+                }
+            }
+        }
+    }
+}

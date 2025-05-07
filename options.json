@@ -1,0 +1,120 @@
+{
+  "representations": ["iphone", "ipad"],
+  "variants": {
+    "iphone": ["standard", "edgeToEdge"],
+    "ipad": ["standard", "splitView"]
+  },
+  "orientations": {
+    "iphone": {
+      "standard": ["portrait", "landscape"],
+      "edgeToEdge": ["portrait", "landscape"]
+    },
+    "ipad": {
+      "standard": ["portrait", "landscape"],
+      "splitView": ["portrait", "landscape"]
+    }
+  },
+  "itemTypes": ["thumbstick", "button"],
+  "inputs": [
+    "up", "down", "left", "right",
+    "analogStickUp", "analogStickDown", "analogStickLeft", "analogStickRight",
+    "a", "b", "c", "x", "y", "select", "start", "mode",
+    "dpad", "z", "l", "r", "menu",
+    "cUp", "cDown", "cLeft", "cRight", "thumbstick",
+    "quickSave", "quickLoad", "fastForward", "toggleFastForward"
+  ],
+  "gameTypeIdentifiers": {
+    "GameBoyColor": "com.rileytestut.delta.game.gbc",
+    "GameBoyAdvance": "com.rileytestut.delta.game.gba",
+    "NintendoDS": "com.rileytestut.delta.game.ds",
+    "NES": "com.rileytestut.delta.game.nes",
+    "SNES": "com.rileytestut.delta.game.snes",
+    "Nintendo64": "com.rileytestut.delta.game.n64",
+    "SegaGenesis": "com.rileytestut.delta.game.genesis"
+  },
+  "screenSpecs": {
+    "GameBoyColor": [{ "width": 160, "height": 144, "aspect": "10:9" }],
+    "GameBoyAdvance": [{ "width": 240, "height": 160, "aspect": "3:2" }],
+    "NintendoDS": [{ "width": 256, "height": 384, "aspect": "2:3" }],
+    "NES": [{ "width": 256, "height": 240, "aspect": "16:15" }],
+    "SNES": [{ "width": 256, "height": 224, "aspect": "8:7" }],
+    "Nintendo64": [{ "width": 256, "height": 224, "aspect": "8:7" }],
+    "SegaGenesis": [
+      { "width": 320, "height": 224, "aspect": "10:7" },
+      { "width": 256, "height": 224, "aspect": "8:7" },
+      { "width": 320, "height": 240, "aspect": "4:3" }
+    ]
+  },
+  "orientationKeys": ["assets", "items", "screens", "mappingSize", "extendedEdges", "translucent"],
+  "assetsKeys": ["resizable", "small", "medium", "large"],
+  "mappingSizeKeys": ["width", "height"],
+  "edgeKeys": ["top", "bottom", "left", "right"],
+  "itemKeys": ["inputs", "frame", "extendedEdges", "thumbstick"],
+  "frameKeys": ["x", "y", "width", "height"],
+  "iphoneLogicalSizes": {
+    "iPhone 16 Pro Max": { "width": 440, "height": 956 },
+    "iPhone 16 Pro": { "width": 402, "height": 874 },
+    "iPhone 16 Plus": { "width": 430, "height": 932 },
+    "iPhone 16": { "width": 393, "height": 852 },
+    "iPhone 15 Pro Max": { "width": 430, "height": 932 },
+    "iPhone 15 Pro": { "width": 393, "height": 852 },
+    "iPhone 15 Plus": { "width": 430, "height": 932 },
+    "iPhone 15": { "width": 393, "height": 852 },
+    "iPhone 14 Plus": { "width": 428, "height": 926 },
+    "iPhone 14 Pro Max": { "width": 430, "height": 932 },
+    "iPhone 14 Pro": { "width": 393, "height": 852 },
+    "iPhone 14": { "width": 390, "height": 844 },
+    "iPhone SE 3rd gen": { "width": 375, "height": 667 },
+    "iPhone 13": { "width": 390, "height": 844 },
+    "iPhone 13 mini": { "width": 375, "height": 812 },
+    "iPhone 13 Pro Max": { "width": 428, "height": 926 },
+    "iPhone 13 Pro": { "width": 390, "height": 844 },
+    "iPhone 12": { "width": 390, "height": 844 },
+    "iPhone 12 mini": { "width": 375, "height": 812 },
+    "iPhone 12 Pro Max": { "width": 428, "height": 926 },
+    "iPhone 12 Pro": { "width": 390, "height": 844 },
+    "iPhone SE 2nd gen": { "width": 375, "height": 667 },
+    "iPhone 11 Pro Max": { "width": 414, "height": 896 },
+    "iPhone 11 Pro": { "width": 375, "height": 812 }
+  },
+  "ipadLogicalSizes": {
+    "iPad 10th gen": { "width": 820, "height": 1180 },
+    "iPad 1st gen": { "width": 768, "height": 1024 },
+    "iPad 2": { "width": 768, "height": 1024 },
+    "iPad 3rd gen": { "width": 768, "height": 1024 },
+    "iPad 4th gen": { "width": 768, "height": 1024 },
+    "iPad 5th gen": { "width": 768, "height": 1024 },
+    "iPad 6th gen": { "width": 768, "height": 1024 },
+    "iPad 7th gen": { "width": 810, "height": 1080 },
+    "iPad 8th gen": { "width": 810, "height": 1080 },
+    "iPad 9th gen": { "width": 810, "height": 1080 },
+    "iPad Air": { "width": 768, "height": 1024 },
+    "iPad Air (3rd gen)": { "width": 834, "height": 1112 },
+    "iPad Air (4th gen)": { "width": 820, "height": 1180 },
+    "iPad Air (5th gen)": { "width": 820, "height": 1180 },
+    "iPad Air (6th gen 11\")": { "width": 820, "height": 1180 },
+    "iPad Air (6th gen 13\")": { "width": 1024, "height": 1366 },
+    "iPad Air 2": { "width": 768, "height": 1024 },
+    "iPad mini": { "width": 768, "height": 1024 },
+    "iPad Mini (5th gen)": { "width": 768, "height": 1024 },
+    "iPad Mini (6th gen)": { "width": 744, "height": 1133 },
+    "iPad Mini (7th gen)": { "width": 744, "height": 1133 },
+    "iPad mini 2": { "width": 768, "height": 1024 },
+    "iPad mini 3": { "width": 768, "height": 1024 },
+    "iPad mini 4": { "width": 768, "height": 1024 },
+    "iPad Pro (1st gen 12.9\")": { "width": 1024, "height": 1366 },
+    "iPad Pro (1st gen 9.7\")": { "width": 768, "height": 1024 },
+    "iPad Pro (2nd gen 10.5\")": { "width": 834, "height": 1112 },
+    "iPad Pro (2nd gen 12.9\")": { "width": 1024, "height": 1366 },
+    "iPad Pro (3rd gen 11\")": { "width": 834, "height": 1194 },
+    "iPad Pro (3rd gen 12.9\")": { "width": 1024, "height": 1366 },
+    "iPad Pro (4th gen 11\")": { "width": 834, "height": 1194 },
+    "iPad Pro (4th gen 12.9\")": { "width": 1024, "height": 1366 },
+    "iPad Pro (5th gen 11\")": { "width": 834, "height": 1194 },
+    "iPad Pro (5th gen 12.9\")": { "width": 1024, "height": 1366 },
+    "iPad Pro (6th gen 11\")": { "width": 834, "height": 1194 },
+    "iPad Pro (6th gen 12.9\")": { "width": 1024, "height": 1366 },
+    "iPad Pro (7th gen 11\")": { "width": 834, "height": 1210 },
+    "iPad Pro (7th gen 13\")": { "width": 1032, "height": 1376 }
+  }
+} 

@@ -1,43 +1,17 @@
 <?php
-// Basic index.php page
-session_start();
-
-// Database connection can be included here
-// include 'config/database.php';
-
-// HTML structure begins
+require_once __DIR__ . '/templates/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Main Content</h2>
-            <p>This is the homepage of my website.</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> My Website. All rights reserved.</p>
-    </footer>
-    
-    <script src="js/script.js"></script>
-</body>
-</html>
+<section class="skin-list-section">
+    <h2>Available Skins</h2>
+    <div id="skin-list" class="skin-list"></div>
+
+    <h3>Upload .deltaskin</h3>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="skin" accept=".deltaskin,.zip" required>
+        <button type="submit">Upload</button>
+    </form>
+</section>
+
+<?php
+require_once __DIR__ . '/templates/footer.php';
+?> 
