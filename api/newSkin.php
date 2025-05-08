@@ -25,22 +25,29 @@ mkdir($dir, 0777, true);
 
 $orientation = 'portrait';
 
-$includeIpad = !empty($input['includeIpad']);
-$includeIphone = !empty($input['includeIphone']);
-$repPrimary = $input['representation'];
-$variantsMap = [ $repPrimary => $input['variant'] ];
-if($includeIpad && $repPrimary!=='ipad') $variantsMap['ipad'] = 'standard';
-if($includeIphone && $repPrimary!=='iphone') $variantsMap['iphone'] = 'standard';
+// Determine representations and variants
+$variantsMap = [];
+if(isset($input['variants']) && is_array($input['variants'])){
+   foreach($input['variants'] as $rep=>$arr){
+       foreach($arr as $v){
+           $variantsMap[$rep][]=$v;
+       }
+   }
+} else {
+   $variantsMap[$input['representation']] = [$input['variant']];
+}
 
 $repObjects=[];
-foreach($variantsMap as $rep=>$var){
-    $repObjects[$rep]=[ $var => [ $orientation => [
-        'assets'=>['resizable'=>''],
-        'items'=>[],
-        'screens'=>[],
-        'mappingSize'=>['width'=>320,'height'=>240],
-        'extendedEdges'=>['top'=>0,'bottom'=>0,'left'=>0,'right'=>0]
-    ] ] ];
+foreach($variantsMap as $rep=>$vArr){
+    foreach($vArr as $v){
+        $repObjects[$rep][$v][$orientation] = [
+            'assets'=>['resizable'=>''],
+            'items'=>[],
+            'screens'=>[],
+            'mappingSize'=>['width'=>320,'height'=>240],
+            'extendedEdges'=>['top'=>0,'bottom'=>0,'left'=>0,'right'=>0]
+        ];
+    }
 }
 
 $info = [

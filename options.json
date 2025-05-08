@@ -24,13 +24,15 @@
     "quickSave", "quickLoad", "fastForward", "toggleFastForward"
   ],
   "gameTypeIdentifiers": {
-    "GameBoyColor": "com.rileytestut.delta.game.gbc",
-    "GameBoyAdvance": "com.rileytestut.delta.game.gba",
-    "NintendoDS": "com.rileytestut.delta.game.ds",
-    "NES": "com.rileytestut.delta.game.nes",
-    "SNES": "com.rileytestut.delta.game.snes",
-    "Nintendo64": "com.rileytestut.delta.game.n64",
-    "SegaGenesis": "com.rileytestut.delta.game.genesis"
+    "Game Boy Color": "gbc",
+    "Game Boy Advance": "gba",
+    "Nintendo DS": "ds",
+    "Nintendo 3DS": "3ds",
+    "NES": "nes",
+    "SNES": "snes",
+    "Nintendo 64": "n64",
+    "Sega Genesis": "genesis",
+    "PlayStation": "ps"
   },
   "screenSpecs": {
     "GameBoyColor": [{ "width": 160, "height": 144, "aspect": "10:9" }],
